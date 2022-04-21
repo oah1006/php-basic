@@ -12,39 +12,12 @@
     </style>
 </head>
 <body>
-    <?php 
-    $name = $email = $password = $website = $comments = $gender = '';
-    $nameErr = $emailErr = $passwordErr = $websiteErr = $genderErr = '';
-    
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["name"])) {
-          $nameErr = "Name is required";
-        } else {
-          $name = test_input($_POST["name"]);
-          // check if name only contains letters and whitespace
-          if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-            $nameErr = "Only letters and white space allowed";
-          }
-        }
-    }
-    
-    
-    
-    
-    function check_data($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    } 
-    ?>
-    
+    <?php require 'check-data.php'; ?>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> ">  
         Name: <input type="text" name="name">
         <span class="error"><?php echo $nameErr; ?></span>
         <br/><br/>
-        <!-- Email: <input type="email" name="email">
+        Email: <input type="email" name="email">
         <br/><br/>
         Password: <input type="password" name="password">
         <br/><br/>
@@ -56,9 +29,14 @@
         <input type="radio" name="gender" value="male">Male
         <input type="radio" name="gender" value="female">Female
         <input type="radio" name="gender" value="other">Other
-        <br/><br/> -->
+        <br/><br/>
         <input type="submit" name="submit" value="Submit">
     </form>
-    <? echo $name;?>
+    <?php
+        echo "<h2>Your information: </h2>";
+        echo $name;
+        echo '<br/>';
+        echo $email;
+    ?>
 </body>
 </html>
