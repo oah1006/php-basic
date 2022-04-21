@@ -14,7 +14,7 @@
           }
         }
 
-        if (empty($_POST["$email"])) {
+        if (empty($_POST["email"])) {
             $emailErr = "Email is required";
         } else {
             $email = check_data($_POST['email']);
@@ -26,7 +26,31 @@
         if (empty($_POST['password'])) {
             $passwordErr = "Password is required";
         } else {
-            $password = check_data
+            $password = check_data($password);
+            if (preg_match('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/', $password)) {
+                $passwordErr = "Invalid password";
+            }
+        }
+
+        if (empty($_POST["website"])) {
+            $websiteErr = "Website is required";
+        } else {
+            $website = check_data($_POST['website']);
+            if (!filter_var($website, FILTER_VALIDATE_URL)) {
+                $websiteErr = "Invalid is website";
+            }
+        }
+
+        if (empty($_POST["comments"])) {
+            $comments = "";
+        } else {
+            $comments = check_data($_POST['comments']);
+        }
+
+        if (empty($_POST["gender"])) {
+            $genderErr = "Gender is required";
+        } else {
+            $gender = check_data($_POST['gender']);
         }
     }
     
