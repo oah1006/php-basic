@@ -6,7 +6,11 @@ class Person {
     private $eyeColor;
     private $age;
 
-    public static $drinkingAge = 21;
+    public static $count = 3;
+
+    public static function plus() {
+        return self::$count;
+    }
 
     public function __construct($name, $eyeColor, $age) {
         $this->name = $name;
@@ -27,5 +31,12 @@ class Person {
         self::$drinkingAge = $newDA;
     }
 }
+
+
+class Animal extends Person {
+    public static $count = 2;
+}
+
+
 
 ?>
