@@ -1,4 +1,5 @@
 <?php
+namespace person;
 
 // class Person {
 //     // Properties
@@ -37,20 +38,32 @@
 //     public static $count = 2;
 // }
 
-namespace person;
+
+
+// class Person {
+//     public $name;
+//     public $age;
+
+//     public function __construct($name, $age) {
+//         $this->name = $name;
+//         $this->age = $age;
+//     }
+
+//     public function getPerson() {
+//         $person = $this->name . " is " . $this->age . " years old!";
+//         return $person;
+//     }
+// }
 
 class Person {
     public $name;
-    public $age;
 
-    public function __construct($name, $age) {
+    public function setName(String $name) {
         $this->name = $name;
-        $this->age = $age;
     }
 
-    public function getPerson() {
-        $person = $this->name . " is " . $this->age . " years old!";
-        return $person;
+    public function getName() {
+        return $this->name;
     }
 }
 

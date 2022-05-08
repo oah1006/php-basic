@@ -1,14 +1,25 @@
 <?php
 
+declare(strict_types = 1);
+
 include_once 'includes/autoloader.php';
 
-$person1 = new person\Person("Hao", 22);
-echo $person1->getPerson();
+$person1 = new person\Person();
 
-echo "<br/>";
+try {
+    $person1->setName("Hao");
+    echo $person1->getName();
+} catch(TypeError $e) {
+    echo "Error: " . $e->getMessage();
+}
 
-$house1 = new House("Vinhome", "red");
-echo $house1->getHouse();
+// $person1 = new person\Person("Hao", 22);
+// echo $person1->getPerson();
+
+// echo "<br/>";
+
+// $house1 = new House("Vinhome", "red");
+// echo $house1->getHouse();
 
 
 // $person1 = new Person("Hao", "Red", 20);
