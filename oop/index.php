@@ -2,9 +2,12 @@
 
 declare(strict_types = 1);
 
-include_once 'includes/autoloader.php';
 
+include_once "abstracts/paymenttypes.php";
+include_once "includes/autoloader.php";
 
+$buyProduct = new BuyProduct();
+echo $buyProduct->getPayment();
 
 // $person1 = new person\Person();
 
@@ -62,7 +65,7 @@ include_once 'includes/autoloader.php';
 
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -87,4 +90,4 @@ include_once 'includes/autoloader.php';
         <button type="submit" name="submit">Calculate</button>
     </form>
 </body>
-</html>
+</html> -->
