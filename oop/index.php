@@ -115,8 +115,11 @@ include_once "includes/autoloader.php";
 <body>
     <?php
 
-        $testObj = new Test();
-        $testObj->setUsersStmt("Phi", "American", "2001/08/10");
+        $userObj = new UsersView();
+        $userObj->showUser("Hao");
+
+        $userObj2 = new UsersController();
+        $userObj2->createUser("Hang", "Anh", "2001/01/01");
 
     ?>
 </body>
