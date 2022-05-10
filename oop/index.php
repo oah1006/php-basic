@@ -2,12 +2,24 @@
 
 declare(strict_types = 1);
 
-
 include_once "abstracts/paymenttypes.php";
 include_once "includes/autoloader.php";
 
-$buyProduct = new BuyProduct();
-echo $buyProduct->getPayment();
+// $obj = new SimpleClass();
+// $obj->helloWorld();
+
+// Anonymous class
+
+// $newObj = new class() {
+//     public function helloWorld() {
+//         echo "Hello world!";
+//     }
+// };
+
+// $newObj->helloWorld();
+
+// $buyProduct = new BuyProduct();
+// echo $buyProduct->getPayment();
 
 // $person1 = new person\Person();
 
@@ -91,3 +103,21 @@ echo $buyProduct->getPayment();
     </form>
 </body>
 </html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+
+        $testObj = new Test();
+        $testObj->setUsersStmt("Phi", "American", "2001/08/10");
+
+    ?>
+</body>
+</html>
